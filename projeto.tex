@@ -1,0 +1,159 @@
+%%
+%% This is file `example.tex',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% coppe.dtx  (with options: `example')
+%% 
+%% This is a sample monograph which illustrates the use of `coppe' document
+%% class and `coppe-unsrt' BibTeX style.
+%% 
+%% \CheckSum{1416}
+%% \CharacterTable
+%%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
+%%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
+%%   Digits        \0\1\2\3\4\5\6\7\8\9
+%%   Exclamation   \!     Double quote  \"     Hash (number) \#
+%%   Dollar        \$     Percent       \%     Ampersand     \&
+%%   Acute accent  \'     Left paren    \(     Right paren   \)
+%%   Asterisk      \*     Plus          \+     Comma         \,
+%%   Minus         \-     Point         \.     Solidus       \/
+%%   Colon         \:     Semicolon     \;     Less than     \<
+%%   Equals        \=     Greater than  \>     Question mark \?
+%%   Commercial at \@     Left bracket  \[     Backslash     \\
+%%   Right bracket \]     Circumflex    \^     Underscore    \_
+%%   Grave accent  \`     Left brace    \{     Vertical bar  \|
+%%   Right brace   \}     Tilde         \~}
+%%
+\documentclass[grad,numbers]{coppe}
+\usepackage{amsmath,amssymb}
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage[T1]{fontenc}
+
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{float}
+
+\makelosymbols
+\makeloabbreviations
+
+\begin{document}
+  \title{Satyrus III: Compilador para Computador Quântico}
+  \foreigntitle{Satyrus III: Compiler for Quantum Computer}
+  \author{Pedro}{Maciel Xavier}
+  \advisor{Prof.}{Priscila}{Machado Vieira Lima}{Ph.D.}
+  \advisor{Prof.}{Felipe}{Maia Galvão França}{Ph.D.}
+  %\advisor{Prof.}{Nome do Terceiro Orientador}{Sobrenome}{D.Sc.}
+
+  \examiner{Prof.}{Nome do Primeiro Examinador Sobrenome}{D.Sc.}
+  \examiner{Prof.}{Nome do Segundo Examinador Sobrenome}{Ph.D.}
+  \examiner{Prof.}{Nome do Terceiro Examinador Sobrenome}{D.Sc.}
+  \examiner{Prof.}{Nome do Quarto Examinador Sobrenome}{Ph.D.}
+  \examiner{Prof.}{Nome do Quinto Examinador Sobrenome}{Ph.D.}
+  
+  \department{ECI}% Confira a tabela a seguir para saber como preencher o comando \department de acordo com seu curso (Graduação - Poli) ou programa (Pós-Graduação - COPPE).
+  
+  %%%%%% Para alunos da POLI %%%%%%
+  
+  %% Course											Option
+  %% Engenharia Ambiental                             EA
+  %% Engenharia Civil                                 ECV
+  %% Engenharia de Computação e Informação            ECI
+  %% Engenharia de Controle e Automação               ECA
+  %% Engenharia de Materiais                          EMAT
+  %% Engenharia de Petróleo                           EPT
+  %% Engenharia de Produção                           EPR
+  %% Engenharia Eletrônica e de Computação            EEC
+  %% Engenharia Elétrica                              EET
+  %% Engenharia Mecânica                              EMC
+  %% Engenharia Metalúrgica                           EMET
+  %% Engenharia Naval e Oceânica                      ENO
+  %% Engenharia Nuclear                               ENU
+  
+  
+  %%%%%% Para alunos da COPPE %%%%%%
+  
+  %% Program											Option
+  %% Engenharia Biomédica								PEB
+  %% Engenharia Civil									PEC
+  %% Engenharia Elétrica								PEE
+  %% Engenharia Mecânica								PEM
+  %% Engenharia Metalúrgica e de Materiais				PEMM
+  %% Engenharia Nuclear									PEN
+  %% Engenharia Oceânica								PENO
+  %% Planejamento Energético							PPE
+  %% Engenharia de Produção								PEP
+  %% Engenharia Química									PEQ
+  %% Engenharia de Sistemas e Computação				PESC
+  %% Engenharia de Transportes							PET
+  
+  
+  \date{12}{2021}
+
+  \keyword{Compiladores}
+  \keyword{Otimização}
+  \keyword{Computação Quântica}
+  \keyword{Lógica}
+
+  \maketitle
+
+  \frontmatter
+  
+  \makecatalog
+  
+  \dedication{A alguém cujo valor é digno desta dedicatória.}
+
+  \chapter*{Agradecimentos}
+
+  Gostaria de agradecer a todos.
+
+  \begin{abstract}
+
+  Apresenta-se, nesta tese, ...
+
+  \end{abstract}
+
+  \begin{foreignabstract}
+
+  In this work, we present ...
+
+  \end{foreignabstract}
+
+  \tableofcontents
+  \listoffigures
+  \listoftables
+  \printlosymbols
+  \printloabbreviations
+
+  \mainmatter
+%  \doublespacing
+  % Introdução
+  \input{projeto-1.tex}
+
+  % Revisão Bibliográfica
+  \input{projeto-2.tex}
+  
+  % Metodologia
+  \input{projeto-3.tex}
+  
+  
+  
+  \chapter{Resultados e Discussões}
+  
+  
+  
+  \chapter{Conclusões}
+  
+  \backmatter
+  \bibliographystyle{coppe-unsrt}
+  \bibliography{bibliografia}
+
+  \appendix
+  \chapter{Algumas Demonstrações}
+\end{document}
+%% 
+%%
+%% End of file `example.tex'.

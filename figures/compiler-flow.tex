@@ -1,0 +1,15 @@
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[nodes={fill=gray!20},
+    row sep=0.3cm,column sep=0.5cm]
+        \node[rectangle] (input) at (0,0) {Programa fonte};
+        \node[rectangle, fill=blue!30] (compiler) at (4, 0) {Compilador};
+        \draw[->] (input) to[out=0,in=180] (compiler);
+        \node[rectangle] (target) at (8, 0) {Programa alvo};
+        \draw[->] (compiler) to[out=0,in=180] (target);
+        \node[rectangle, fill=red!30] (error) at (4, -2) {Mensagens de erro};
+        \draw[->] (compiler) to (error);
+    \end{tikzpicture}
+    \label{fig:compiler-flow}
+    \caption{A estrutura básica de um compilador.}
+\end{figure}
