@@ -30,129 +30,156 @@
 \usepackage{amsmath,amssymb}
 \usepackage{hyperref}
 \usepackage[utf8]{inputenc}
-\usepackage[brazil]{babel}
+%\usepackage[brazil]{babel}
 \usepackage[T1]{fontenc}
 
 \usepackage{graphicx}
 \usepackage{tikz}
 \usepackage{float}
 
+%% Tikz Libraries
+\usetikzlibrary{shapes.multipart}
+\usetikzlibrary{arrows.meta}
+
 \makelosymbols
 \makeloabbreviations
 
+%% Override commands
+\renewcommand{\vec}[1]{%%
+  \mathbf{#1}%%
+}
+
+\renewcommand{\min}{%%
+  \text{min}\,%%
+}
+
+\renewcommand{\max}{%%
+  \text{max}\,%%
+}
+
+\renewcommand{\inf}{%%
+  \text{inf}\,%%
+}
+
+\renewcommand{\sup}{%%
+  \text{sup}\,%%
+}
+
 \begin{document}
-  \title{Satyrus III: Compilador para Computador Quântico}
-  \foreigntitle{Satyrus III: Compiler for Quantum Computer}
-  \author{Pedro}{Maciel Xavier}
-  \advisor{Prof.}{Priscila}{Machado Vieira Lima}{Ph.D.}
-  \advisor{Prof.}{Felipe}{Maia Galvão França}{Ph.D.}
-  %\advisor{Prof.}{Nome do Terceiro Orientador}{Sobrenome}{D.Sc.}
+\title{Satyrus III: Compilador para Computador Quântico}
+\foreigntitle{Satyrus III: Compiler for Quantum Computer}
+\author{Pedro}{Maciel Xavier}
+\advisor{Prof.}{Priscila}{Machado Vieira Lima}{Ph.D.}
+\advisor{Prof.}{Felipe}{Maia Galvão França}{Ph.D.}
+%\advisor{Prof.}{Nome do Terceiro Orientador}{Sobrenome}{D.Sc.}
 
-  \examiner{Prof.}{Nome do Primeiro Examinador Sobrenome}{D.Sc.}
-  \examiner{Prof.}{Nome do Segundo Examinador Sobrenome}{Ph.D.}
-  \examiner{Prof.}{Nome do Terceiro Examinador Sobrenome}{D.Sc.}
-  \examiner{Prof.}{Nome do Quarto Examinador Sobrenome}{Ph.D.}
-  \examiner{Prof.}{Nome do Quinto Examinador Sobrenome}{Ph.D.}
-  
-  \department{ECI}% Confira a tabela a seguir para saber como preencher o comando \department de acordo com seu curso (Graduação - Poli) ou programa (Pós-Graduação - COPPE).
-  
-  %%%%%% Para alunos da POLI %%%%%%
-  
-  %% Course											Option
-  %% Engenharia Ambiental                             EA
-  %% Engenharia Civil                                 ECV
-  %% Engenharia de Computação e Informação            ECI
-  %% Engenharia de Controle e Automação               ECA
-  %% Engenharia de Materiais                          EMAT
-  %% Engenharia de Petróleo                           EPT
-  %% Engenharia de Produção                           EPR
-  %% Engenharia Eletrônica e de Computação            EEC
-  %% Engenharia Elétrica                              EET
-  %% Engenharia Mecânica                              EMC
-  %% Engenharia Metalúrgica                           EMET
-  %% Engenharia Naval e Oceânica                      ENO
-  %% Engenharia Nuclear                               ENU
-  
-  
-  %%%%%% Para alunos da COPPE %%%%%%
-  
-  %% Program											Option
-  %% Engenharia Biomédica								PEB
-  %% Engenharia Civil									PEC
-  %% Engenharia Elétrica								PEE
-  %% Engenharia Mecânica								PEM
-  %% Engenharia Metalúrgica e de Materiais				PEMM
-  %% Engenharia Nuclear									PEN
-  %% Engenharia Oceânica								PENO
-  %% Planejamento Energético							PPE
-  %% Engenharia de Produção								PEP
-  %% Engenharia Química									PEQ
-  %% Engenharia de Sistemas e Computação				PESC
-  %% Engenharia de Transportes							PET
-  
-  
-  \date{12}{2021}
+\examiner{Prof.}{Nome do Primeiro Examinador Sobrenome}{D.Sc.}
+\examiner{Prof.}{Nome do Segundo Examinador Sobrenome}{Ph.D.}
+\examiner{Prof.}{Nome do Terceiro Examinador Sobrenome}{D.Sc.}
+\examiner{Prof.}{Nome do Quarto Examinador Sobrenome}{Ph.D.}
+\examiner{Prof.}{Nome do Quinto Examinador Sobrenome}{Ph.D.}
 
-  \keyword{Compiladores}
-  \keyword{Otimização}
-  \keyword{Computação Quântica}
-  \keyword{Lógica}
+\department{ECI}% Confira a tabela a seguir para saber como preencher o comando \department de acordo com seu curso (Graduação - Poli) ou programa (Pós-Graduação - COPPE).
 
-  \maketitle
+%%%%%% Para alunos da POLI %%%%%%
 
-  \frontmatter
-  
-  \makecatalog
-  
-  \dedication{A alguém cujo valor é digno desta dedicatória.}
+%% Course											Option
+%% Engenharia Ambiental                             EA
+%% Engenharia Civil                                 ECV
+%% Engenharia de Computação e Informação            ECI
+%% Engenharia de Controle e Automação               ECA
+%% Engenharia de Materiais                          EMAT
+%% Engenharia de Petróleo                           EPT
+%% Engenharia de Produção                           EPR
+%% Engenharia Eletrônica e de Computação            EEC
+%% Engenharia Elétrica                              EET
+%% Engenharia Mecânica                              EMC
+%% Engenharia Metalúrgica                           EMET
+%% Engenharia Naval e Oceânica                      ENO
+%% Engenharia Nuclear                               ENU
 
-  \chapter*{Agradecimentos}
 
-  Gostaria de agradecer a todos.
+%%%%%% Para alunos da COPPE %%%%%%
 
-  \begin{abstract}
+%% Program											Option
+%% Engenharia Biomédica								PEB
+%% Engenharia Civil									PEC
+%% Engenharia Elétrica								PEE
+%% Engenharia Mecânica								PEM
+%% Engenharia Metalúrgica e de Materiais				PEMM
+%% Engenharia Nuclear									PEN
+%% Engenharia Oceânica								PENO
+%% Planejamento Energético							PPE
+%% Engenharia de Produção								PEP
+%% Engenharia Química									PEQ
+%% Engenharia de Sistemas e Computação				PESC
+%% Engenharia de Transportes							PET
+
+
+\date{12}{2021}
+
+\keyword{Compiladores}
+\keyword{Otimização}
+\keyword{Computação Quântica}
+\keyword{Lógica}
+
+\maketitle
+
+\frontmatter
+
+\makecatalog
+
+\dedication{A alguém cujo valor é digno desta dedicatória.}
+
+\chapter*{Agradecimentos}
+
+Gostaria de agradecer a todos.
+
+\begin{abstract}
 
   Apresenta-se, nesta tese, ...
 
-  \end{abstract}
+\end{abstract}
 
-  \begin{foreignabstract}
+\begin{foreignabstract}
 
   In this work, we present ...
 
-  \end{foreignabstract}
+\end{foreignabstract}
 
-  \tableofcontents
-  \listoffigures
-  \listoftables
-  \printlosymbols
-  \printloabbreviations
+\tableofcontents
+\listoffigures
+\listoftables
+\printlosymbols
+\printloabbreviations
 
-  \mainmatter
+\mainmatter
 %  \doublespacing
-  % Introdução
-  \input{projeto-1.tex}
+% Introdução
+\chapter{Introdução}
+\input{projeto-introdução.tex}
 
-  % Revisão Bibliográfica
-  \input{projeto-2.tex}
-  
-  % Metodologia
-  \input{projeto-3.tex}
-  
-  
-  
-  \chapter{Resultados e Discussões}
-  
-  
-  
-  \chapter{Conclusões}
-  
-  \backmatter
-  \bibliographystyle{coppe-unsrt}
-  \bibliography{bibliografia}
+% Revisão Bibliográfica
+\chapter{Revisão Bibliográfica}
+\input{projeto-revisão.tex}
 
-  \appendix
-  \chapter{Algumas Demonstrações}
+% Metodologia
+\chapter{Metodologia}
+\input{projeto-metodologia.tex}
+
+\chapter{Resultados e Discussões}
+\input{projeto-resultados.tex}
+
+
+\chapter{Conclusões}
+\input{projeto-conclusões.tex}
+
+\backmatter
+\bibliographystyle{coppe-plain}
+\bibliography{bibliografia}
+
+\appendix
+\chapter{Algumas Demonstrações}
 \end{document}
 %% 
 %%
