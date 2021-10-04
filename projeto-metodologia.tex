@@ -46,18 +46,23 @@ Aqui lembramos que cada $E_j : \mathbb{B}^{n} \to \mathbb{N}$ com $j > 0$ conta 
 \end{equation}
 onde $\mu_0 = \max E_0 \left({ \vec{x} }\right) - \min E_0 \left({ \vec{x} }\right)$.
 
-Tomando a diferença entre as penalidades de níveis consecutivos é possível obter uma expressão para calcular cada $\lambda_{i}$ eficientemente através de um processo iterativo. A partir de \eqref{eq:penalty-ineq} fazemos
+Escolhendo $\varepsilon > 0$ arbitrariamente pequeno, tomamos \eqref{eq:penalty-ineq} por
 \begin{equation}
-    \lambda_{i + 1} - \lambda_{i} > \left({\mu_0 + \sum_{j \le i} \lambda_{j}\, n_j}\right) - \left({\mu_0 + \sum_{j < i} \lambda_{j}\, n_j}\right) = \lambda_{i}\,n_{i} \nonumber
+    \lambda_{i} = \mu_0 + \sum_{j < i} \lambda_{j}\, n_{j} + \varepsilon \label{eq:penalty-epsilon}
+\end{equation}
+
+Tomando a diferença entre as penalidades de níveis consecutivos é possível obter uma expressão para calcular cada $\lambda_{i}$ eficientemente através de um processo iterativo. A partir de \eqref{eq:penalty-epsilon} fazemos
+\begin{equation}
+    \lambda_{i + 1} - \lambda_{i} = \left({\mu_0 + \sum_{j \le i} \lambda_{j}\, n_j} + \varepsilon \right) - \left({\mu_0 + \sum_{j < i} \lambda_{j}\, n_j} + \varepsilon \right) = \lambda_{i}\,n_{i} \nonumber
 \end{equation}
 ou seja,
 \begin{equation}
-    \lambda_{i + 1} > \lambda_{i}\, (n_{i} + 1) \nonumber
-\end{equation}
-
-Escolhendo $\varepsilon > 0$ arbitrariamente pequeno, escrevemos
-\begin{equation}
-    \lambda_{i + 1} = \lambda_{i}\, (n_{i} + 1) + \varepsilon
+    \left\{%%
+    \begin{array}{@{} l c @{}}
+        \lambda_{i + 1} = \lambda_{i}\, (n_{i} + 1) & \text{(passo indutivo)}\\
+        \lambda_{1} = \mu_0 + \varepsilon & \text{(caso base)}
+    \end{array}
+    \right.%%
 \end{equation}
 
 Ainda nos resta calcular $\mu_0$. Conhecer máximo e mínimo de $E_0 \left({\vec{x}}\right)$, a princípio, é simplesmente o caso irrestrito do próprio problema que desejamos resolver. Sabendo, contudo, que $E_{i} \left({\vec{x}}\right)$ é da forma
